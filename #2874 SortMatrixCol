@@ -1,0 +1,52 @@
+#include <iostream>
+#include <algorithm>
+#include <vector>
+using namespace std;
+/*
+
+string nume="inmultire";
+ifstream cin(nume+".in");
+ofstream cout(nume+".out");
+
+*/
+vector<int>v;
+int main()
+{
+    int n,m;
+    char c;
+    cin>>n>>m>>c;
+    for(int i=0;i<n;i++)
+    {
+        int x;
+        for(int j=0;j<m;j++)
+        {
+            cin>>x;
+            v.push_back(x);
+        }
+    }
+    if(c=='-')
+    {
+        sort(v.begin(),v.end(),greater<int>());
+        for(int i=0;i<n;i++)
+        {
+            cout<<v[i]<<" ";
+            for(int y=1;y<m;y++){
+            cout<<v[i+y*n]<<" ";
+            }
+            cout<<"\n";
+        }
+    }
+    else
+    {
+        sort(v.begin(),v.end());
+        for(int i=0;i<n;i++)
+        {
+            cout<<v[i]<<" ";
+            for(int y=1;y<m;y++){
+            cout<<v[i+y*n]<<" ";
+            }
+            cout<<"\n";
+        }
+    }
+    return 0;
+}
